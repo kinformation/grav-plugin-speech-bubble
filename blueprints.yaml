@@ -1,0 +1,31 @@
+name: Speech Bubble
+version: 0.1.0
+description: Speech Bubble plugins
+icon: plug
+author:
+  name: Kazuya Kanatani
+  email: kanatani.social@gmail.com
+homepage: https://github.com/kinformation/grav-plugin-speech-bubble
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/kinformation/grav-plugin-speech-bubble/issues
+docs: https://github.com/kinformation/grav-plugin-speech-bubble/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: Text Variable
+      help: Text to add to the top of a page
