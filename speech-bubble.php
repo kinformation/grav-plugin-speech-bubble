@@ -1,8 +1,17 @@
 <?php
+/**
+ * Short description for speech-bubble.php
+ *
+ * @package speech-bubble
+ * @author Kazuya Kanatani
+ * @version 1.0.0
+ * @copyright (C) 2017 kinformation<kanatani.social@gmail.com>
+ * @license MIT
+ */
+
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
-use RocketTheme\Toolbox\Event\Event;
 
 /**
  * Class SpeechBubblePlugin
@@ -12,52 +21,37 @@ class SpeechBubblePlugin extends Plugin
 {
     /**
      * @return array
-     *
-     * The getSubscribedEvents() gives the core a list of events
-     *     that the plugin wants to listen to. The key of each
-     *     array section is the event that the plugin listens to
-     *     and the value (in the form of an array) contains the
-     *     callable (or function) as well as the priority. The
-     *     higher the number the higher the priority.
      */
     public static function getSubscribedEvents()
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0]
+            'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
+            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+            'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
         ];
     }
 
     /**
-     * Initialize the plugin
+     * Initialize configuration
      */
-    public function onPluginsInitialized()
+    public function onShortcodeHandlers()
     {
-        // Don't proceed if we are in the admin plugin
-        if ($this->isAdmin()) {
-            return;
-        }
-
-        // Enable the main event we are interested in
-        $this->enable([
-            'onPageContentRaw' => ['onPageContentRaw', 0]
-        ]);
+        $this->grav['shortcode']->registerAllShortcodes(__DIR__.'/shortcodes');
     }
 
     /**
-     * Do some work for this event, full details of events can be found
-     * on the learn site: http://learn.getgrav.org/plugins/event-hooks
-     *
-     * @param Event $e
+     * Add current directory to twig lookup paths.
      */
-    public function onPageContentRaw(Event $e)
+    public function onTwigTemplatePaths()
     {
-        // Get a variable from the plugin configuration
-        $text = $this->grav['config']->get('plugins.speech-bubble.text_var');
+        $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
+    }
 
-        // Get the current raw content
-        $content = $e['page']->getRawContent();
-
-        // Prepend the output with the custom text and set back on the page
-        $e['page']->setRawContent($text . "\n\n" . $content);
+    /**
+     * Add style and script to page.
+     */
+    public function onTwigSiteVariables()
+    {
+        $this->grav['assets']->addCss('plugin://speech-bubble/assets/css/speech-bubble.css');
     }
 }
