@@ -1,8 +1,6 @@
 # Speech Bubble Plugin
 
-**This README.md file should be modified to describe the features, installation, configuration, and general usage of this plugin.**
-
-The **Speech Bubble** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Speech Bubble plugins
+The **Speech Bubble** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Easily display a dialogue style speech bubble.
 
 ## Installation
 
@@ -23,7 +21,7 @@ To install this plugin, just download the zip version of this repository and unz
 You should now have all the plugin files under
 
     /your/site/grav/user/plugins/speech-bubble
-	
+
 > NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
 
 ## Configuration
@@ -34,17 +32,22 @@ Here is the default configuration and an explanation of available options:
 
 ```yaml
 enabled: true
+icon:
+  display: true
+  image:
+    left: /path/to/foo.jpeg
+    right: /path/to/bar.jpeg
 ```
 
 ## Usage
 
-**Describe how to use the plugin.**
+```
+[bubble side="left"]How are you?[/bubble]
+[bubble side="right" icon="/path/to/bar.jpeg"]I’m doing great.[/bubble]
+```
+![](assets/image/sample.png)
 
-## Credits
-
-**Did you incorporate third-party code? Want to thank somebody?**
-
-## To Do
-
-- [ ] Future plans, if any
+* options
+    * side: Set bubble side `right` or `left`. If option is not set, `left`.
+    * icon: Set icon path. If option is not set, use the value of config.
 

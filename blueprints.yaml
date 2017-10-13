@@ -1,16 +1,18 @@
 name: Speech Bubble
-version: 0.1.0
-description: Speech Bubble plugins
-icon: plug
+version: 1.0.0
+description: The Speech Bubble Plugin is for Grav CMS. Easily display a dialogue style speech bubble.
+icon: comments-o
 author:
   name: Kazuya Kanatani
   email: kanatani.social@gmail.com
 homepage: https://github.com/kinformation/grav-plugin-speech-bubble
-demo: http://demo.yoursite.com
-keywords: grav, plugin, etc
+keywords: grav, plugin, speech bubble
 bugs: https://github.com/kinformation/grav-plugin-speech-bubble/issues
-docs: https://github.com/kinformation/grav-plugin-speech-bubble/blob/develop/README.md
+docs: https://github.com/kinformation/grav-plugin-speech-bubble/blob/master/README.md
 license: MIT
+
+dependencies:
+  - shortcode-core
 
 form:
   validation: strict
@@ -19,13 +21,37 @@ form:
       type: toggle
       label: Plugin status
       highlight: 1
-      default: 0
+      default: 1
       options:
         1: Enabled
         0: Disabled
       validate:
         type: bool
-    text_var:
+
+    icon:
+      type: section
+      title: icon
+      underline: false
+
+    icon.display:
+      type: toggle
+      label: Display icons
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    icon.image.left:
       type: text
-      label: Text Variable
-      help: Text to add to the top of a page
+      label: Left image
+      default: /user/plugins/speech-bubble/assets/icon/cat.jpeg
+      validate:
+        required: true
+    icon.image.right:
+      type: text
+      label: Right image
+      default: /user/plugins/speech-bubble/assets/icon/dog.jpeg
+      validate:
+        required: true

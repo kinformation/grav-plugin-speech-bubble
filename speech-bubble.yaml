@@ -1,2 +1,6 @@
 enabled: true
-text_var: Custom Text added by the **Speech Bubble** plugin (disable plugin to remove)
+icon:
+  display: true
+  image:
+    left: /user/plugins/speech-bubble/assets/icon/cat.jpeg
+    right: /user/plugins/speech-bubble/assets/icon/dog.jpeg
