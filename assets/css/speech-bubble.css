@@ -21,14 +21,6 @@
 
 /* right side bubble */
 
-.sb-bubble-right:after {
-    left: 100%;
-    border-color: rgba(39, 29, 29, 0);
-    border-left-color: #ffffff;
-    border-width: 7px 16px;
-    margin-top: -7px;
-}
-
 .sb-bubble-right:before {
     left: 100%;
     border-color: rgba(153, 153, 153, 0);
@@ -37,16 +29,17 @@
     margin-top: -10px;
 }
 
+.sb-bubble-right:after {
+    left: 100%;
+    border-color: rgba(39, 29, 29, 0);
+    border-left-color: #ffffff;
+    border-width: 10px 20px;
+    margin: -10px -4.5px 0 0;
+    margin: -10px 0 0 -4.5px;
+}
+
 
 /* left side bubble */
-
-.sb-bubble-left:after {
-    right: 100%;
-    border-color: rgba(255, 255, 255, 0);
-    border-right-color: #ffffff;
-    border-width: 7px 16px;
-    margin-top: -7px;
-}
 
 .sb-bubble-left:before {
     right: 100%;
@@ -54,6 +47,14 @@
     border-right-color: #999999;
     border-width: 10px 20px;
     margin-top: -10px;
+}
+
+.sb-bubble-left:after {
+    right: 100%;
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 10px 20px;
+    margin: -10px -4.5px 0 0;
 }
 
 .sb-icon {
