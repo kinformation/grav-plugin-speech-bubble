@@ -33,16 +33,14 @@ form:
       title: icon
       underline: false
 
-    icon.display:
-      type: toggle
-      label: Display icons
-      highlight: 1
-      default: 1
+    icon.type:
+      type: select
+      label: Icon type
+      default: square
       options:
-        1: Enabled
-        0: Disabled
-      validate:
-        type: bool
+        square: Square
+        circle: Circle
+        none: None
     icon.image.left:
       type: text
       label: Left image

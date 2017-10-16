@@ -34,7 +34,6 @@
     border-color: rgba(39, 29, 29, 0);
     border-left-color: #ffffff;
     border-width: 10px 20px;
-    margin: -10px -4.5px 0 0;
     margin: -10px 0 0 -4.5px;
 }
 
@@ -57,6 +56,9 @@
     margin: -10px -4.5px 0 0;
 }
 
+
+/* icon */
+
 .sb-icon {
     width: 50px;
     height: 50px;
@@ -64,8 +66,17 @@
     vertical-align: middle;
 }
 
-.speech-bubble p {
-    margin: 0;
+.sb-icon-type-circle {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sb-icon-type-square {
+    object-fit: cover;
+}
+
+.sb-icon-type-none {
+    visibility: hidden
 }
 
 
@@ -93,4 +104,8 @@
 
 .speech-bubble:after {
     clear: both;
+}
+
+.speech-bubble p {
+    margin: 0;
 }

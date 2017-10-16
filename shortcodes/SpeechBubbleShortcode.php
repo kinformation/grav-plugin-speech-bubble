@@ -26,10 +26,10 @@ class SpeechBubbleShortcode extends Shortcode
             }
 
             // bubble icon setting
-            $icon_disp = $this->config->get('plugins.speech-bubble.icon.display');
             $icon = $this->config->get('plugins.speech-bubble.icon.image.'.$side);
-            if (empty($icon_disp) || empty($side)) {
-                $icon_disp = false;
+            $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
+            if (empty($icon_type) || empty($icon)) {
+                $icon_type = 'none';
             }
 
             // bubble content setting
@@ -41,8 +41,8 @@ class SpeechBubbleShortcode extends Shortcode
             return $this->twig->processTemplate('partials/bubble.twig', [
                 'bubble_side' => $side,
                 'bubble_text' => $text,
-                'bubble_icon_disp' => $icon_disp,
                 'bubble_icon' => $icon,
+                'bubble_icon_type' => $icon_type,
             ]);
         });
     }
