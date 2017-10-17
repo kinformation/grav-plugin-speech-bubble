@@ -2,5 +2,5 @@ enabled: true
 icon:
   display: true
   image:
-    left: /user/plugins/speech-bubble/assets/icon/cat.jpeg
-    right: /user/plugins/speech-bubble/assets/icon/dog.jpeg
+    left: /user/plugins/speech-bubble/assets/icon/icon_1.png
+    right: /user/plugins/speech-bubble/assets/icon/icon_2.png

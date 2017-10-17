@@ -21,7 +21,7 @@ class SpeechBubbleShortcode extends Shortcode
 
             // bubble side setting
             $side = $sc->getParameter('side');
-            if (empty($side)) {
+            if (empty($side) || ($side != 'left' && $side != 'right')) {
                 $side = 'left';
             }
 

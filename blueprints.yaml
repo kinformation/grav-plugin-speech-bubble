@@ -44,12 +44,8 @@ form:
     icon.image.left:
       type: text
       label: Left image
-      default: /user/plugins/speech-bubble/assets/icon/cat.jpeg
-      validate:
-        required: true
+      default: /user/plugins/speech-bubble/assets/icon/icon_1.png
     icon.image.right:
       type: text
       label: Right image
-      default: /user/plugins/speech-bubble/assets/icon/dog.jpeg
-      validate:
-        required: true
+      default: /user/plugins/speech-bubble/assets/icon/icon_2.png
