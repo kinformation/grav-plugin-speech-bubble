@@ -40,7 +40,7 @@ form:
       options:
         square: Square
         circle: Circle
-        none: None
+        hidden: Hidden
     icon.image.left:
       type: text
       label: Left image

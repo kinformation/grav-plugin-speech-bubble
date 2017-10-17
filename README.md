@@ -33,11 +33,14 @@ Here is the default configuration and an explanation of available options:
 ```yaml
 enabled: true
 icon:
-  display: true
+  type: square
   image:
     left: /path/to/foo.jpeg
     right: /path/to/bar.jpeg
 ```
+
+* `icon.type`: Set icon frame type.`square`, `circle` or `hidden`.
+* `icon.image`: Set icon path.
 
 ## Usage
 
@@ -48,6 +51,6 @@ icon:
 ![](assets/image/sample.png)
 
 * options
-    * side: Set bubble side `right` or `left`. If option is not set, `left`.
-    * icon: Set icon path. If option is not set, use the value of config.
+    * `side`: Set bubble side `right` or `left`. If option is not set, `left`.
+    * `icon`: Set icon path. If option is not set, use the value of config.
 
