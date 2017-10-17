@@ -32,6 +32,10 @@ class SpeechBubbleShortcode extends Shortcode
                 $icon_type = 'hidden';
             }
 
+            if ($icon_type != 'hidden'){
+                $icon_label = $sc->getParameter('label');
+            }
+
             // bubble content setting
             $text = $sc->getContent();
             if (empty($side)) {
@@ -43,6 +47,7 @@ class SpeechBubbleShortcode extends Shortcode
                 'bubble_text' => $text,
                 'bubble_icon' => $icon,
                 'bubble_icon_type' => $icon_type,
+                'bubble_icon_label' => $icon_label,
             ]);
         });
     }

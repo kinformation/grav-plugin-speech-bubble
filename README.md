@@ -53,4 +53,4 @@ icon:
 * options
     * `side`: Set bubble side `right` or `left`. If option is not set, `left`.
     * `icon`: Set icon path. If option is not set, use the value of config.
-
+    * `label`: Set icon label. It is not displayed when `icon.type` is `hidden`.
