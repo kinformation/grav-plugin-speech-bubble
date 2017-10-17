@@ -29,7 +29,7 @@ class SpeechBubbleShortcode extends Shortcode
             $icon = $this->config->get('plugins.speech-bubble.icon.image.'.$side);
             $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
             if (empty($icon_type) || empty($icon)) {
-                $icon_type = 'none';
+                $icon_type = 'hidden';
             }
 
             // bubble content setting
