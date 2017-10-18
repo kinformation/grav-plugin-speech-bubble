@@ -4,7 +4,7 @@
  *
  * @package speech-bubble
  * @author Kazuya Kanatani
- * @version 1.0.0
+ * @version 1.1.0
  * @copyright (C) 2017 kinformation<kanatani.social@gmail.com>
  * @license MIT
  */
@@ -21,15 +21,19 @@ class SpeechBubbleShortcode extends Shortcode
 
             // bubble side setting
             $side = $sc->getParameter('side');
-            if (empty($side)) {
+            if (empty($side) || ($side != 'left' && $side != 'right')) {
                 $side = 'left';
             }
 
             // bubble icon setting
-            $icon_disp = $this->config->get('plugins.speech-bubble.icon.display');
             $icon = $this->config->get('plugins.speech-bubble.icon.image.'.$side);
-            if (empty($icon_disp) || empty($side)) {
-                $icon_disp = false;
+            $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
+            if (empty($icon_type) || empty($icon)) {
+                $icon_type = 'hidden';
+            }
+
+            if ($icon_type != 'hidden'){
+                $icon_label = $sc->getParameter('label');
             }
 
             // bubble content setting
@@ -41,8 +45,9 @@ class SpeechBubbleShortcode extends Shortcode
             return $this->twig->processTemplate('partials/bubble.twig', [
                 'bubble_side' => $side,
                 'bubble_text' => $text,
-                'bubble_icon_disp' => $icon_disp,
                 'bubble_icon' => $icon,
+                'bubble_icon_type' => $icon_type,
+                'bubble_icon_label' => $icon_label,
             ]);
         });
     }

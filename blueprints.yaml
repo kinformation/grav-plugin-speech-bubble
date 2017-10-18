@@ -1,5 +1,5 @@
 name: Speech Bubble
-version: 1.0.0
+version: 1.1.0
 description: The Speech Bubble Plugin is for Grav CMS. Easily display a dialogue style speech bubble.
 icon: comments-o
 author:
@@ -33,25 +33,19 @@ form:
       title: icon
       underline: false
 
-    icon.display:
-      type: toggle
-      label: Display icons
-      highlight: 1
-      default: 1
+    icon.type:
+      type: select
+      label: Icon type
+      default: square
       options:
-        1: Enabled
-        0: Disabled
-      validate:
-        type: bool
+        square: Square
+        circle: Circle
+        hidden: Hidden
     icon.image.left:
       type: text
       label: Left image
-      default: /user/plugins/speech-bubble/assets/icon/cat.jpeg
-      validate:
-        required: true
+      default: /user/plugins/speech-bubble/assets/icon/icon_1.png
     icon.image.right:
       type: text
       label: Right image
-      default: /user/plugins/speech-bubble/assets/icon/dog.jpeg
-      validate:
-        required: true
+      default: /user/plugins/speech-bubble/assets/icon/icon_2.png

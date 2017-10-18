@@ -1,6 +1,9 @@
 <div class="speech-bubble">
-	<img class="sb-icon sb-icon-{{ bubble_side }}" src='{{ bubble_icon }}' alt='' {% if bubble_icon_disp == false %}style="visibility:hidden;"{% endif %}>
-	<div class="sb-bubble sb-bubble-{{ bubble_side }}">
-		<p>{{ bubble_text }}</p>
-	</div>
+    <figure class="sb-icon sb-icon-{{ bubble_side }}">
+        <img class="sb-icon-type-{{ bubble_icon_type }}" src='{{ bubble_icon }}' alt='' >
+        <figcaption>{{ bubble_icon_label }}</figcaption>
+    </figure>
+    <div class="sb-bubble sb-bubble-{{ bubble_side }}">
+        <p>{{ bubble_text }}</p>
+    </div>
 </div>
