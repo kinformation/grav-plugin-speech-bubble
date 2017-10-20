@@ -32,6 +32,8 @@ Here is the default configuration and an explanation of available options:
 
 ```yaml
 enabled: true
+bubble:
+  type: std
 icon:
   type: square
   image:
@@ -39,18 +41,20 @@ icon:
     right: /path/to/bar.jpeg
 ```
 
+* `bubble.type`: Set bubble type.`std`, `pop`.
 * `icon.type`: Set icon frame type.`square`, `circle` or `hidden`.
 * `icon.image`: Set icon path.
 
 ## Usage
 
 ```
-[bubble side="left"]How are you?[/bubble]
-[bubble side="right" icon="/path/to/bar.jpeg"]I’m doing great.[/bubble]
+[bubble side=left type=std]How are you?[/bubble]
+[bubble side=right icon=/path/to/bar.jpeg]I’m doing great.[/bubble]
 ```
 ![](assets/image/sample.png)
 
 * options
     * `side`: Set bubble side `right` or `left`. If option is not set, `left`.
+    * `type`: Set bubble type.`std`, `pop`. If option is not set, use the value of config.
     * `icon`: Set icon path. If option is not set, use the value of config.
     * `label`: Set icon label. It is not displayed when `icon.type` is `hidden`.

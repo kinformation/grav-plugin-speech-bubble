@@ -1,10 +1,20 @@
-.sb-bubble {
+/* bubble */
+
+.sb-bubble-type-std {
     position: relative;
     background: #ffffff;
     border: 2px solid #999999;
     border-radius: .4em;
     padding: .4em 1em;
     max-width: 70%;
+}
+
+.sb-bubble-type-pop {
+    position: relative;
+    padding: .2em 1em;
+    max-width: 70%;
+    border-radius: 1em;
+    background: linear-gradient( to bottom, rgb(218, 240, 169) 0%, rgb(175, 230, 74) 15%, rgb(175, 230, 74) 85%, rgb(140, 193, 89) 100%);
 }
 
 .sb-bubble:after,
@@ -19,9 +29,9 @@
 }
 
 
-/* right side bubble */
+/* right bubble */
 
-.sb-bubble-right:before {
+.sb-bubble-right.sb-bubble-type-std:before {
     left: 100%;
     border-color: rgba(153, 153, 153, 0);
     border-left-color: #999999;
@@ -29,7 +39,7 @@
     margin-top: -10px;
 }
 
-.sb-bubble-right:after {
+.sb-bubble-right.sb-bubble-type-std:after {
     left: 100%;
     border-color: rgba(39, 29, 29, 0);
     border-left-color: #ffffff;
@@ -37,10 +47,28 @@
     margin: -10px 0 0 -4.5px;
 }
 
+.sb-bubble-right.sb-bubble-type-pop:before {
+    left: 100%;
+    height: 1em;
+    width: .5em;
+    background: #afe64a;
+    border-radius: 0 1em 1em 0;
+    margin: -24px 0 0 -4px;
+}
 
-/* left side bubble */
+.sb-bubble-right.sb-bubble-type-pop:after {
+    left: 100%;
+    height: 1em;
+    width: .5em;
+    background: #ffffff;
+    border-radius: 0 1em 1em 0;
+    margin: -30px 0 0 -4px;
+}
 
-.sb-bubble-left:before {
+
+/* left bubble */
+
+.sb-bubble-left.sb-bubble-type-std:before {
     right: 100%;
     border-color: rgba(153, 153, 153, 0);
     border-right-color: #999999;
@@ -48,12 +76,30 @@
     margin-top: -10px;
 }
 
-.sb-bubble-left:after {
+.sb-bubble-left.sb-bubble-type-std:after {
     right: 100%;
     border-color: rgba(255, 255, 255, 0);
     border-right-color: #ffffff;
     border-width: 10px 20px;
     margin: -10px -4.5px 0 0;
+}
+
+.sb-bubble-left.sb-bubble-type-pop:before {
+    right: 100%;
+    height: 1em;
+    width: .5em;
+    background: #afe64a;
+    border-radius: 1em 0 0 1em;
+    margin: -24px -4px 0 0;
+}
+
+.sb-bubble-left.sb-bubble-type-pop:after {
+    right: 100%;
+    height: 1em;
+    width: .5em;
+    background: #ffffff;
+    border-radius: 1em 0 0 1em;
+    margin: -30px -4px 0 0;
 }
 
 
