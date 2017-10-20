@@ -41,7 +41,7 @@ icon:
     right: /path/to/bar.jpeg
 ```
 
-* `bubble.type`: Set bubble type.`std`, `pop` or `flat`.
+* `bubble.type`: Set bubble type.`std`, `pop`, `think` or `flat`.
 * `icon.type`: Set icon frame type.`square`, `circle` or `hidden`.
 * `icon.image`: Set icon path.
 
@@ -55,6 +55,6 @@ icon:
 
 * options
     * `side`: Set bubble side `right` or `left`. If option is not set, `left`.
-    * `type`: Set bubble type.`std`, `pop` or `flat`. If option is not set, use the value of config.
+    * `type`: Set bubble type.`std`, `pop`, `think` or `flat`. If option is not set, use the value of config.
     * `icon`: Set icon path. If option is not set, use the value of config.
     * `label`: Set icon label. It is not displayed when `icon.type` is `hidden`.
