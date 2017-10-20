@@ -14,7 +14,14 @@
     padding: .2em 1em;
     max-width: 70%;
     border-radius: 1em;
-    background: linear-gradient( to bottom, rgb(218, 240, 169) 0%, rgb(175, 230, 74) 15%, rgb(175, 230, 74) 85%, rgb(140, 193, 89) 100%);
+}
+
+.sb-bubble-left.sb-bubble-type-pop {
+    background: linear-gradient(to bottom, #efefef 0%, #e5e5e5 16%, #e5e5e5 85%, #bfbfbf 100%);
+}
+
+.sb-bubble-right.sb-bubble-type-pop {
+    background: linear-gradient( to bottom, #daf0a9 0%, #afe64a 15%, #afe64a 85%, #8cc159 100%);
 }
 
 .sb-bubble-type-flat {
@@ -126,7 +133,7 @@
     right: 100%;
     height: 1em;
     width: .5em;
-    background: #afe64a;
+    background: #e5e5e5;
     border-radius: 1em 0 0 1em;
     margin: -24px -4px 0 0;
 }
