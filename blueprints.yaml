@@ -34,12 +34,13 @@ form:
       underline: false
     bubble.type:
       type: select
-      label: Bubble type
+      label: Bubble default type
       default: std
       options:
         std: std
         pop: pop
         flat: flat
+        think: think
 
     icon:
       type: section
@@ -55,9 +56,9 @@ form:
         hidden: Hidden
     icon.image.left:
       type: text
-      label: Left image
+      label: Left default image
       default: /user/plugins/speech-bubble/assets/icon/icon_1.png
     icon.image.right:
       type: text
-      label: Right image
+      label: Right default image
       default: /user/plugins/speech-bubble/assets/icon/icon_2.png
