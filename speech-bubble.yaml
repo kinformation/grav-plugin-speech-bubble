@@ -1,4 +1,6 @@
 enabled: true
+bubble:
+  type: std
 icon:
   type: square
   image:

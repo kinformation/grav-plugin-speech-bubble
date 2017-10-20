@@ -28,11 +28,22 @@ form:
       validate:
         type: bool
 
+    bubble:
+      type: section
+      title: bubble
+      underline: false
+    bubble.type:
+      type: select
+      label: Bubble type
+      default: std
+      options:
+        std: std
+        pop: pop
+
     icon:
       type: section
       title: icon
       underline: false
-
     icon.type:
       type: select
       label: Icon type
