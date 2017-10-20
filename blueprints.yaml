@@ -39,6 +39,7 @@ form:
       options:
         std: std
         pop: pop
+        flat: flat
 
     icon:
       type: section
