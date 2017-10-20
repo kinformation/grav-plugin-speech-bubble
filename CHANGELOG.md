@@ -1,3 +1,9 @@
+# v1.1.1
+##  10/21/2017
+
+1. [](#fix)
+    * shortcode `icon` option doesnt work
+
 # v1.1.0
 ##  10/18/2017
 
