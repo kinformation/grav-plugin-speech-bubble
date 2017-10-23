@@ -14,6 +14,7 @@
     padding: .2em 1em;
     max-width: 70%;
     border-radius: 1em;
+    margin-top: 15px;
 }
 
 .sb-bubble-left.sb-bubble-type-pop {
@@ -30,6 +31,7 @@
     max-width: 70%;
     border-radius: .5em;
     border: solid 1px #BAC5D9;
+    margin-top: 15px;
 }
 
 .sb-bubble-type-think {
