@@ -4,7 +4,7 @@
  *
  * @package speech-bubble
  * @author Kazuya Kanatani
- * @version 1.1.1
+ * @version 2.0.0
  * @copyright (C) 2017 kinformation<kanatani.social@gmail.com>
  * @license MIT
  */
@@ -19,33 +19,47 @@ class SpeechBubbleShortcode extends Shortcode
     {
         $this->shortcode->getHandlers()->add('bubble', function (ShortcodeInterface $sc) {
 
-            // bubble side setting
+            /* bubble setting */
+            // direction
             $side = $sc->getParameter('side');
             if (empty($side) || ($side != 'left' && $side != 'right')) {
                 $side = 'left';
             }
 
-            // bubble icon setting
+            // type
+            $type = !empty($sc->getParameter('type'))
+                ? $sc->getParameter('type')
+                : $this->config->get('plugins.speech-bubble.bubble.type');
+            if (empty($type)) {
+                $type = 'std';
+            }
+
+            // content
+            $text = $sc->getContent();
+            if (empty($text)) {
+                $text = " ";
+            }
+
+            /* icon setting */
+            // image
             $icon = !empty($sc->getParameter('icon'))
                 ? $sc->getParameter('icon')
                 : $this->config->get('plugins.speech-bubble.icon.image.'.$side);
+
+            // frame
             $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
             if (empty($icon_type) || empty($icon)) {
                 $icon_type = 'hidden';
             }
 
+            // label
             if ($icon_type != 'hidden'){
                 $icon_label = $sc->getParameter('label');
             }
 
-            // bubble content setting
-            $text = $sc->getContent();
-            if (empty($side)) {
-                $text = " ";
-            }
-
             return $this->twig->processTemplate('partials/bubble.twig', [
                 'bubble_side' => $side,
+                'bubble_type' => $type,
                 'bubble_text' => $text,
                 'bubble_icon' => $icon,
                 'bubble_icon_type' => $icon_type,
