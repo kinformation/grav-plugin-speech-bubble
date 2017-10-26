@@ -1,3 +1,11 @@
+# v2.0.0
+##  10/26/2017
+
+1. [](#new)
+    * Add new bubble style.
+1. [](#improved)
+    * Change CSS to Sass(SCSS).
+
 # v1.1.0
 ##  10/18/2017
 
