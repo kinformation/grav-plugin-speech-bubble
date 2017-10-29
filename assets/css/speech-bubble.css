@@ -1,5 +1,6 @@
 .speech-bubble {
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 10px 0; }
   .speech-bubble p {
     margin: 0; }
   .speech-bubble:after {
@@ -33,8 +34,7 @@
   background: #ffffff;
   border: 2px solid #999999;
   border-radius: .4em;
-  padding: .4em 1em;
-  margin-bottom: 15px; }
+  padding: .4em 1em; }
   .sb-bubble-type-std.sb-bubble-left:after {
     border-color: #ffffff00;
     border-right-color: #ffffff;

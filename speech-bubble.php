@@ -4,7 +4,7 @@
  *
  * @package speech-bubble
  * @author Kazuya Kanatani
- * @version 2.0.1
+ * @version 2.0.2
  * @copyright (C) 2017 kinformation<kanatani.social@gmail.com>
  * @license MIT
  */
