@@ -55,10 +55,28 @@ form:
         circle: Circle
         hidden: Hidden
     icon.image.left:
-      type: text
+      type: filepicker
       label: Left default image
-      default: /user/plugins/speech-bubble/assets/icon/icon_1.png
+      default: icon_1.png
+      folder: 'user/plugins/speech-bubble/assets/icon'
+      preview_images: true
+      accept:
+        - .png
+        - .jpg
     icon.image.right:
-      type: text
+      type: filepicker
       label: Right default image
-      default: /user/plugins/speech-bubble/assets/icon/icon_2.png
+      default: icon_2.png
+      folder: 'user/plugins/speech-bubble/assets/icon'
+      preview_images: true
+      accept:
+        - .png
+        - .jpg
+    icon.image.upload:
+      type: file
+      label: Upload icon image
+      destination: 'user/plugins/speech-bubble/assets/icon'
+      limit: 2
+      filesize: 1
+      accept:
+        - image/*
