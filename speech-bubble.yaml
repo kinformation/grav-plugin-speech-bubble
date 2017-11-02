@@ -4,5 +4,5 @@ bubble:
 icon:
   type: square
   image:
-    left: /user/plugins/speech-bubble/assets/icon/icon_1.png
-    right: /user/plugins/speech-bubble/assets/icon/icon_2.png
+    left: icon_1.png
+    right: icon_2.png

@@ -42,9 +42,10 @@ class SpeechBubbleShortcode extends Shortcode
 
             /* icon setting */
             // image
+            $ICON_DIR = '/user/plugins/speech-bubble/assets/icon/';
             $icon = !empty($sc->getParameter('icon'))
                 ? $sc->getParameter('icon')
-                : $this->config->get('plugins.speech-bubble.icon.image.'.$side);
+                : $ICON_DIR.$this->config->get('plugins.speech-bubble.icon.image.'.$side);
 
             // frame
             $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
