@@ -1,6 +1,8 @@
-<div class="speech-bubble">
-    <figure class="sb-icon sb-icon-{{ bubble_side }}">
-        <img class="sb-icon-type-{{ bubble_icon_type }}" src='{{ bubble_icon }}' alt='' >
+<div class='speech-bubble'>
+    <figure class='sb-icon sb-icon-{{ bubble_side }}'>
+        <div class='sb-icon-type-{{ bubble_icon_type }}'>
+            {{ bubble_icon.cropZoom(50,50).html(null, 'icon') }}
+        </div>
         <figcaption>{{ bubble_icon_label }}</figcaption>
     </figure>
     <div class="sb-bubble sb-bubble-{{ bubble_side }} sb-bubble-type-{{ bubble_type }}">

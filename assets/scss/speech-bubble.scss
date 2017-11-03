@@ -272,15 +272,19 @@
         text-align: center;
         width: 94px;
     }
-    img {
+    .sb-icon-type-circle,
+    .sb-icon-type-hidden,
+    .sb-icon-type-square {
         height: 50px;
         margin: 5px 22px;
         vertical-align: middle;
         width: 50px;
     }
     .sb-icon-type-circle {
-        border-radius: 50%;
-        object-fit: cover;
+        img {
+            border-radius: 50%;
+            object-fit: cover;
+        }
     }
     .sb-icon-type-hidden {
         visibility: hidden;

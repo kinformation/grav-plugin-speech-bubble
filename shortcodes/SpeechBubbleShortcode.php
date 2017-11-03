@@ -12,6 +12,7 @@
 namespace Grav\Plugin\Shortcodes;
 
 use Thunder\Shortcode\Shortcode\ShortcodeInterface;
+use Grav\Common\Page\Media;
 
 class SpeechBubbleShortcode extends Shortcode
 {
@@ -42,10 +43,19 @@ class SpeechBubbleShortcode extends Shortcode
 
             /* icon setting */
             // image
-            $ICON_DIR = '/user/plugins/speech-bubble/assets/icon/';
-            $icon = !empty($sc->getParameter('icon'))
-                ? $sc->getParameter('icon')
-                : $ICON_DIR.$this->config->get('plugins.speech-bubble.icon.image.'.$side);
+            if(empty($sc->getParameter('icon'))) {
+                // use config
+                $media = new Media(__DIR__.'/../assets/icon');
+                $filename = $this->config->get('plugins.speech-bubble.icon.image.'.$side);
+            } else {
+                // use param
+                $media = $this->grav['page']->media();
+                $filename = $sc->getParameter('icon');
+            }
+            $images = $media->images();
+            $icon = array_key_exists($filename, $images)
+                ? $images[$filename]
+                : null;
 
             // frame
             $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
@@ -54,6 +64,7 @@ class SpeechBubbleShortcode extends Shortcode
             }
 
             // label
+            $icon_label = null;
             if ($icon_type != 'hidden'){
                 $icon_label = $sc->getParameter('label');
             }
