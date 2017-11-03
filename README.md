@@ -50,7 +50,7 @@ Image files need to be placed in `user/plugins/speech-bubble/assets/icon/`.
 
 ```
 [bubble side=left type=std]How are you?[/bubble]
-[bubble side=right icon=/path/to/bar.jpeg]I’m doing great.[/bubble]
+[bubble side=right icon=page_upload_image.jpg]I’m doing great.[/bubble]
 ```
 ![](assets/image/sample.png)
 
