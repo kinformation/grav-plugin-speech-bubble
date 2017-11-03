@@ -52,6 +52,7 @@ class SpeechBubbleShortcode extends Shortcode
                 $media = $this->grav['page']->media();
                 $filename = $sc->getParameter('icon');
             }
+            $filename = basename($filename);
             $images = $media->images();
             $icon = array_key_exists($filename, $images)
                 ? $images[$filename]
