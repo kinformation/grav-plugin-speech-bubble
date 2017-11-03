@@ -202,13 +202,15 @@
   text-align: center;
   width: 94px; }
 
-.sb-icon img {
+.sb-icon .sb-icon-type-circle,
+.sb-icon .sb-icon-type-hidden,
+.sb-icon .sb-icon-type-square {
   height: 50px;
   margin: 5px 22px;
   vertical-align: middle;
   width: 50px; }
 
-.sb-icon .sb-icon-type-circle {
+.sb-icon .sb-icon-type-circle img {
   border-radius: 50%;
   object-fit: cover; }
 
