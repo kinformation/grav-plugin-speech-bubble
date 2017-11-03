@@ -4,7 +4,7 @@
  *
  * @package speech-bubble
  * @author Kazuya Kanatani
- * @version 2.0.2
+ * @version 2.1.0
  * @copyright (C) 2017 kinformation<kanatani.social@gmail.com>
  * @license MIT
  */
@@ -12,6 +12,7 @@
 namespace Grav\Plugin\Shortcodes;
 
 use Thunder\Shortcode\Shortcode\ShortcodeInterface;
+use Grav\Common\Page\Media;
 
 class SpeechBubbleShortcode extends Shortcode
 {
@@ -42,9 +43,20 @@ class SpeechBubbleShortcode extends Shortcode
 
             /* icon setting */
             // image
-            $icon = !empty($sc->getParameter('icon'))
-                ? $sc->getParameter('icon')
-                : $this->config->get('plugins.speech-bubble.icon.image.'.$side);
+            if(empty($sc->getParameter('icon'))) {
+                // use config
+                $media = new Media(__DIR__.'/../assets/icon');
+                $filename = $this->config->get('plugins.speech-bubble.icon.image.'.$side);
+            } else {
+                // use param
+                $media = $this->grav['page']->media();
+                $filename = $sc->getParameter('icon');
+            }
+            $filename = basename($filename);
+            $images = $media->images();
+            $icon = array_key_exists($filename, $images)
+                ? $images[$filename]
+                : null;
 
             // frame
             $icon_type = $this->config->get('plugins.speech-bubble.icon.type');
@@ -53,6 +65,7 @@ class SpeechBubbleShortcode extends Shortcode
             }
 
             // label
+            $icon_label = null;
             if ($icon_type != 'hidden'){
                 $icon_label = $sc->getParameter('label');
             }

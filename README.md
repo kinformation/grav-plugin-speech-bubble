@@ -37,19 +37,20 @@ bubble:
 icon:
   type: square
   image:
-    left: /path/to/foo.jpeg
-    right: /path/to/bar.jpeg
+    left: foo.jpeg
+    right: bar.jpeg
 ```
 
 * `bubble.type`: Set bubble type.`std`, `pop`, `think` or `flat`.
 * `icon.type`: Set icon frame type.`square`, `circle` or `hidden`.
-* `icon.image`: Set icon path.
+* `icon.image.{left|right}`: Set image file name.
+Image files need to be placed in `user/plugins/speech-bubble/assets/icon/`.
 
 ## Usage
 
 ```
 [bubble side=left type=std]How are you?[/bubble]
-[bubble side=right icon=/path/to/bar.jpeg]I’m doing great.[/bubble]
+[bubble side=right icon=page_upload_image.jpg]I’m doing great.[/bubble]
 ```
 ![](assets/image/sample.png)
 

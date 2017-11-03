@@ -1,3 +1,10 @@
+# v2.1.0
+##  11/03/2017
+
+1. [](#improved)
+    * Improved icon designation method of config.
+    * Improve image resizing.
+
 # v2.0.2
 ##  10/29/2017
 
